@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophic Mindset</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for easy theme customization */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f0f4f8;
+            --text-color: #333333;
+            --light-text-color: #ffffff;
+            --background-color: #f8f9fa;
+            --form-bg-color: #ffffff;
+            --border-color: #e0e0e0;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            background-color: var(--form-bg-color);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .hero-text {
+            background: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive layout for larger screens */
+        @media (min-width: 768px) {
+            .page-wrapper {
+                flex-direction: row;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero-text, .form-section {
+                padding: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <main class="main-content">
+            <div class="hero-text">
+                <h1>Unlock Your Potential</h1>
+                <p>Join thousands of professionals who are transforming their careers and businesses with the power of logic. Sign up now to get exclusive access.</p> 
+            </div>
+
+            <div class="form-section">
+                <h2>Sign Up for the Live Masterclass</h2>
+                <div class="form-container">
+                    <form action="{{ url_for('submit_email') }}" method="POST">
+                        <div class="form-group">
+                            <label for="first_name">Your First Name</label>
+                            <input type="text" id="first_name" name="first_name" required placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp_number">WhatsApp</label>
+                            <input type="tel" id="whatsapp_number" name="whatsapp_number" required placeholder="WhatsApp Number (e.g., +1234567890)">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="submit-button">Build My Mindset</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Philosophic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Virtual environments
+/venv
+/.env
+
+# Byte-code files
+__pycache__/
+*.py[cod]
+
+# IDE files
+.vscode/
+
+# Other common files
+.DS_Store

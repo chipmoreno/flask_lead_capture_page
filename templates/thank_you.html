@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Registering!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables for easy theme customization */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f0f4f8;
+            --text-color: #333333;
+            --light-text-color: #ffffff;
+            --background-color: #f8f9fa;
+            --card-bg-color: #ffffff;
+            --border-color: #e0e0e0;
+            --border-radius: 12px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .icon-container {
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        .icon-container svg {
+            width: 64px;
+            height: 64px;
+        }
+
+        .page-wrapper h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
+            font-weight: 700;
+        }
+
+        .page-wrapper p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="page-wrapper">
+        <div class="icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+        </div>
+        
+        <h1>Thank You for Registering!</h1>
+        <p>Your journey with our service is about to begin. We've sent a confirmation email with all the details you need to get started. Please check your inbox.</p>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Philosophic. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
